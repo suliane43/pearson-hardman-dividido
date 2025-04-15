@@ -6,11 +6,11 @@ const mobileLinks = document.querySelectorAll('#mobile-navbar a');
 
 // Mapeamento de links para seções
 const sectionMapping = {
-  'index.html': 'header',
-  'serviço.html': 'expertise-areas',
-  'sobre.html': 'about',
-  'time.html': 'team',
-  'contato.html': 'contact'
+    'index.html': 'header',
+    'serviço.html': 'expertise-areas',
+    'sobre.html': 'about',
+    'time.html': 'team',
+    'contato.html': 'contact'
 };
 
 // Selecionar os elementos dos slides
@@ -19,13 +19,13 @@ const dots = document.querySelectorAll('.dot');
 let slideIndex = 1;
 
 function showSlides() {
-    for(let i = 0; i < slides.length; i++) {
+    for (let i = 0; i < slides.length; i++) {
         slides[i].classList.remove('active');
         dots[i].classList.remove('active');
     }
 
     slideIndex++;
-    if(slideIndex > slides.length) {
+    if (slideIndex > slides.length) {
         slideIndex = 1;
     }
 
@@ -51,14 +51,14 @@ closeMenuBtn.addEventListener('click', () => {
 mobileLinks.forEach(link => {
     link.addEventListener('click', (e) => {
         e.preventDefault(); // Impede o comportamento padrão do link
-        
+
         // Fecha o menu mobile
         mobileNavbar.classList.remove('menu-active');
         document.body.style.overflow = '';
-        
+
         // Obtém o nome do arquivo do link
         const href = link.getAttribute('href');
-        
+
         // Verifica se estamos na página index.html
         if (window.location.pathname.includes('index.html') || window.location.pathname.endsWith('/')) {
             // Se estiver na página inicial, navega para a seção correspondente
